@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>3x3 Database Grid</title>
+
+<style>
+
+body{
+    margin:0;
+    padding:30px;
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+}
+
+/* Grid */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+
+    background:linear-gradient(
+        135deg,
+        #e3f2fd,
+        #bbdefb,
+        #90caf9
+    );
+
+    padding:25px;
+    border-radius:20px;
+}
+
+/* Table Box */
+
+.table-box{
+    background:white;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+    height:300px;
+
+    overflow:auto;
+
+    border:3px solid #ddd;
+}
+
+/* Different colors */
+
+.table-box:nth-child(1){
+    border-color:#e53935;
+}
+
+.table-box:nth-child(2){
+    border-color:#8e24aa;
+}
+
+.table-box:nth-child(3){
+    border-color:#3949ab;
+}
+
+.table-box:nth-child(4){
+    border-color:#00897b;
+}
+
+.table-box:nth-child(5){
+    border-color:#43a047;
+}
+
+.table-box:nth-child(6){
+    border-color:#fb8c00;
+}
+
+.table-box:nth-child(7){
+    border-color:#6d4c41;
+}
+
+.table-box:nth-child(8){
+    border-color:#546e7a;
+}
+
+.table-box:nth-child(9){
+    border-color:#d81b60;
+}
+
+/* Table */
+
+table{
+    border-collapse:collapse;
+    min-width:700px;
+    width:100%;
+}
+
+th,
+td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+    white-space:nowrap;
+}
+
+/* Header */
+
+th{
+    background:#1976d2;
+    color:white;
+    position:sticky;
+    top:0;
+}
+
+/* Alternate rows */
+
+tr:nth-child(even){
+    background:#f5f5f5;
+}
+
+tr:hover{
+    background:#fff9c4;
+}
+
+/* First column */
+
+.row-name{
+    background:#e3f2fd;
+    font-weight:bold;
+    position:sticky;
+    left:0;
+}
+
+/* Scrollbar */
+
+.table-box::-webkit-scrollbar{
+    width:10px;
+    height:10px;
+}
+
+.table-box::-webkit-scrollbar-thumb{
+    background:#90caf9;
+    border-radius:20px;
+}
+
+.table-box::-webkit-scrollbar-track{
+    background:#eee;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grid">
+
+    <!-- Table 1 -->
+
+    <div class="table-box">
+
+        <table>
+
+            <tr>
+                <th>login_id</th>
+                <th>user_id</th>
+                <th>ip_address</th>
+                <th>login_time</th>
+            </tr>
+
+            <tr>
+                <td class="row-name">1</td>
+                <td>U001</td>
+                <td>192.168.1.10</td>
+                <td>2026-07-13 10:30</td>
+            </tr>
+
+            <tr>
+                <td class="row-name">2</td>
+                <td>U002</td>
+                <td>103.25.45.100</td>
+                <td>2026-07-13 11:00</td>
+            </tr>
+
+            <tr>
+                <td class="row-name">3</td>
+                <td>U003</td>
+                <td>172.16.20.50</td>
+                <td>2026-07-13 11:20</td>
+            </tr>
+
+            <tr>
+                <td class="row-name">4</td>
+                <td>U004</td>
+                <td>10.0.0.5</td>
+                <td>2026-07-13 12:10</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- Duplicate same table for 3x3 -->
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">5</td><td>U005</td><td>192.168.1.20</td><td>2026-07-13 12:30</td></tr><tr><td class="row-name">6</td><td>U006</td><td>103.25.45.110</td><td>2026-07-13 13:00</td></tr></table></div>
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">7</td><td>U007</td><td>172.20.1.1</td><td>2026-07-13 13:20</td></tr><tr><td class="row-name">8</td><td>U008</td><td>8.8.8.8</td><td>2026-07-13 13:45</td></tr></table></div>
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">9</td><td>U009</td><td>1.1.1.1</td><td>2026-07-13 14:00</td></tr></table></div>
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">10</td><td>U010</td><td>192.168.10.10</td><td>2026-07-13 14:20</td></tr></table></div>
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">11</td><td>U011</td><td>203.45.22.10</td><td>2026-07-13 15:00</td></tr></table></div>
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">12</td><td>U012</td><td>10.10.10.10</td><td>2026-07-13 15:30</td></tr></table></div>
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">13</td><td>U013</td><td>172.30.10.1</td><td>2026-07-13 16:00</td></tr></table></div>
+
+    <div class="table-box"><table><tr><th>login_id</th><th>user_id</th><th>ip_address</th><th>login_time</th></tr><tr><td class="row-name">14</td><td>U014</td><td>115.99.10.20</td><td>2026-07-13 16:30</td></tr></table></div>
+
+</div>
+
+</body>
+</html>
